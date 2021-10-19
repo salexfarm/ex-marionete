@@ -36,7 +36,7 @@ And response a json with this structure:
 
 ### gRPC
 
-We would like you to implement the logic of client/server and service provided in the protobuf file [here](src/main/proto/login_service.proto).
+We would like you to implement the logic of client/server and service provided in the protobuf file [here](service/src/main/proto/login_service.proto).
 
 To be invoked the gRPC server, once you receive the Rest call of ```/marionete/account/```. 
 So then you can obtain and keep the ```token``` for the next rest calls.
@@ -48,7 +48,7 @@ We would like from you to create a ```Rest connector``` to invoke two external s
 * **UserAccount**: It will return the user information
     ```
     Request:
-        GET /marionete/user/
+        GET http://localhost:8898/marionete/user/
         
         HEADER Authorization: token
     
@@ -64,7 +64,7 @@ We would like from you to create a ```Rest connector``` to invoke two external s
 * **AccountInfo**: It will return the account information
     ```
     Request:
-        GET /marionete/account/
+        GET http://localhost:8899/marionete/account/
         
         HEADER Authorization: token
     
