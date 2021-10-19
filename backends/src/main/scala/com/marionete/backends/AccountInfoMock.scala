@@ -1,10 +1,26 @@
 package com.marionete.backends
 
 import com.twitter.finagle.http.{Request, Response}
-import com.twitter.finagle.{Failure, Http, ListeningServer, Service, Status, http}
+import com.twitter.finagle.{Http, ListeningServer, Service, http}
 import com.twitter.util.Future
 
+import scala.collection.mutable
+
+
 object AccountInfoMock {
+
+  private val statuses: mutable.Queue[http.Status] = mutable.Queue[http.Status](
+    http.Status.TooManyRequests,
+    http.Status.TooManyRequests,
+    http.Status.Ok,
+    http.Status.Ok,
+    http.Status.Ok,
+    http.Status.Ok,
+    http.Status.Ok,
+    http.Status.Ok,
+    http.Status.Ok,
+    http.Status.Ok
+  )
 
   def start(): ListeningServer = {
     val port = "8899"
@@ -16,7 +32,7 @@ object AccountInfoMock {
     req.path match {
       case "/marionete/account/" => processAccountEndpoint(req)
       case _ =>
-        val rep = Response(com.twitter.finagle.http.Status.NotFound)
+        val rep = Response(http.Status.NotFound)
         Future.value(rep)
     }
   }
@@ -31,12 +47,12 @@ object AccountInfoMock {
                    "account_number":12345
                 }
             |""".stripMargin
-        val rep = Response(com.twitter.finagle.http.Status.Ok)
+        val rep = Response(statuses.dequeue())
         rep.setContentString(response)
         Future.value(rep)
 
       case None =>
-        val rep = Response(com.twitter.finagle.http.Status.InternalServerError)
+        val rep = Response(http.Status.InternalServerError)
         Future.value(rep)
     }
   }
