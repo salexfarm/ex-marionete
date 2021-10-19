@@ -16,12 +16,12 @@ object AccountInfoMock {
     req.path match {
       case "/marionete/account/" => processAccountEndpoint(req)
       case _ =>
-        Future.exception(Failure.rejected("no endpoint found"))
+        val rep = Response(com.twitter.finagle.http.Status.NotFound)
+        Future.value(rep)
     }
   }
 
   private def processAccountEndpoint(req: Request): Future[Response] = {
-    Response()
     req.headerMap.get("Authorization") match {
       case Some(token) =>
         println(s"[AccountInfoMock] Request with $token valid. Returning account info.")
@@ -36,7 +36,8 @@ object AccountInfoMock {
         Future.value(rep)
 
       case None =>
-        Future.exception(Failure.rejected("Token not found in header"))
+        val rep = Response(com.twitter.finagle.http.Status.InternalServerError)
+        Future.value(rep)
     }
   }
 
