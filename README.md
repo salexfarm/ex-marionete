@@ -40,7 +40,7 @@ And response a json with this structure:
 
 We would like you to implement the logic of client/server and service provided in the protobuf file [here](service/src/main/proto/login_service.proto).
 
-To be invoked the gRPC server, once you receive the Rest call of ```/marionete/account/```. 
+To be invoked the gRPC server, once you receive the Rest call of ```/marionete/useraccount/```. 
 So then you can obtain and keep the ```token``` for the next rest calls.
 
 ### Rest Connector
