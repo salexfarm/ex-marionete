@@ -5,10 +5,10 @@ import com.twitter.finagle.{Http, Service, http}
 import com.twitter.util.Await
 import org.scalatest.{BeforeAndAfterAll, FeatureSpec, GivenWhenThen}
 
-class UserAccountMockTest extends FeatureSpec with GivenWhenThen with BeforeAndAfterAll{
+class UserInfoMockTest extends FeatureSpec with GivenWhenThen with BeforeAndAfterAll{
 
   override def beforeAll(): Unit ={
-    UserAccountMock.start()
+    UserInfoMock.start()
   }
 
   feature("[UserAccountMock] To ensure that is working as we expect") {

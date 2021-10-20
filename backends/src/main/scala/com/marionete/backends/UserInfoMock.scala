@@ -4,7 +4,7 @@ import com.twitter.finagle.{Failure, Http, ListeningServer, Service, http}
 import com.twitter.finagle.http.{Request, Response}
 import com.twitter.util.{Future}
 
-object UserAccountMock {
+object UserInfoMock {
 
   def start(): ListeningServer = {
     val port = "8898"

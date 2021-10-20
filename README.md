@@ -79,7 +79,7 @@ We would like from you to create a ```Rest connector``` to invoke two external s
 We provide implementation for both backends in ```backennds``` module, with mocks that you can start invoking in your tests:
 
 ```
-UserAccountMock.start()
+UserInfoMock.start()
 AccountInfoMock.start()
 ```
 
