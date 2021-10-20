@@ -24,17 +24,19 @@ POST /marionete/useraccount/
 ```
 And response a json with this structure:
 ```
-
 {
-    "name":"John",
-    "surname":"Doe",
-    "sex":"male",
-    "age": 32,
-    "account_number":12345
+  "accountInfo": {
+    "accountNumber": "12345-3346-3335-4456"
+  },
+  "userInfo": {
+    "name": "John",
+    "surname": "Doe",
+    "sex": "male",
+    "age": 32
+  }
 }
 
 ```
-
 
 ### gRPC
 
@@ -72,7 +74,7 @@ We would like from you to create a ```Rest connector``` to invoke two external s
     
     Response:
     {
-        "account_number":12345
+        "accountNumber":"12345-3346-3335-4456"
     }
     ```
 

@@ -1,7 +1,7 @@
 package com.marionete.backends
 
-import com.twitter.finagle.http.{Request, Response}
-import com.twitter.finagle.{Http, ListeningServer, Service, http}
+import com.twitter.finagle.http.{Request, Response, Status}
+import com.twitter.finagle.{Failure, Http, ListeningServer, Service, http}
 import com.twitter.util.Future
 
 import scala.collection.mutable
@@ -40,16 +40,22 @@ object AccountInfoMock {
   private def processAccountEndpoint(req: Request): Future[Response] = {
     req.headerMap.get("Authorization") match {
       case Some(token) =>
-        println(s"[AccountInfoMock] Request with $token valid. Returning account info.")
         val response =
           """
                 {
-                   "account_number":12345
+                   "accountNumber":"12345-3346-3335-4456"
                 }
             |""".stripMargin
-        val rep = Response(statuses.dequeue())
-        rep.setContentString(response)
-        Future.value(rep)
+        val status = statuses.dequeue()
+        val rep = Response(status)
+        if(status == Status.Ok){
+          println(s"[AccountInfoMock] Request with $token valid. Returning account info.")
+          rep.setContentString(response)
+          Future.value(rep)
+        }else{
+          println(s"[AccountInfoMock] Request with $token invalid.")
+          Future.exception(Failure.rejected("Service not available"))
+        }
 
       case None =>
         val rep = Response(http.Status.InternalServerError)

@@ -1,14 +1,20 @@
 package com.marionete.backends
 
 import com.twitter.finagle.http.{Request, Response, Status}
-import com.twitter.finagle.{Http, Service, http}
+import com.twitter.finagle.{Http, ListeningServer, Service, http}
 import com.twitter.util.Await
 import org.scalatest.{BeforeAndAfterAll, FeatureSpec, GivenWhenThen}
 
 class UserInfoMockTest extends FeatureSpec with GivenWhenThen with BeforeAndAfterAll{
 
-  override def beforeAll(): Unit ={
-    UserInfoMock.start()
+  var maybeServer: Option[ListeningServer] = None;
+
+  override def beforeAll(): Unit = {
+    maybeServer = Some(UserInfoMock.start())
+  }
+
+  override def afterAll(): Unit = {
+    maybeServer.map(server => server.close())
   }
 
   feature("[UserAccountMock] To ensure that is working as we expect") {
