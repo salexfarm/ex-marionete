@@ -14,7 +14,7 @@ For this platform, we would like an implementation of a simple **Restful** servi
 
 ```
 
-POST /marionete/account/
+POST /marionete/useraccount/
 
 {
     "username":"bla",
