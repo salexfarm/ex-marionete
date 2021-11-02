@@ -8,6 +8,8 @@ In this assignment we would like from you, to implement a simple platform that c
 
 All the logic you must implement have to be in ```service``` module.
 
+The implementation can be done in whatever JVM language you want **(Java/Scala/Kotlin/Groovy)**
+
 ### Restful 
 
 For this platform, we would like an implementation of a simple **Restful** service which have to implement the endpoint:
@@ -78,7 +80,9 @@ We would like from you to create a ```Rest connector``` to invoke two external s
     }
     ```
 
-We provide implementation for both backends in ```backennds``` module, with mocks that you can start invoking in your tests:
+We provide implementation for both backends in ```backends``` module.
+
+This mocks are not part of the exercise and only need to be invoked in your tests:
 
 ```
 UserInfoMock.start()
