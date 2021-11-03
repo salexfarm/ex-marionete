@@ -100,9 +100,11 @@ AccountInfoMock.start()
 
 ## Expectations 
 * The program must run and return results invoking the endpoint of the API described before.
+* The program must use the mocks servers we provide in **backends** module.
 * The program must work efficiently expecting to receive big amount fo traffic.
 * The code must include unit tests and be well-structured to support future maintenance and evolutions. 
   Try to use the best practices that you have learned from your experiences.
+* Documentation to follow the architecture of the program is always good.
 * You should be spending 2-3 hours on the task, but approaching 'production like' quality is more
   important than implementation speed and feature completeness.
 
