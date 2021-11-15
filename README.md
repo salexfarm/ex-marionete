@@ -8,7 +8,7 @@ In this assignment we would like from you, to implement a simple platform that c
 
 All the logic you must implement have to be in ```service``` module.
 
-The implementation can be done in whatever JVM language you want **(Java/Scala/Kotlin/Groovy)**
+The implementation can be done in whatever JVM language you want **(Java/Scala/Kotlin/Groovy)** using at least ```jdk-11.0.1```
 
 ### Restful 
 
@@ -99,6 +99,7 @@ AccountInfoMock.start()
 * How you prioritise the sub-tasks involved (how much attention to pay to testing, what things do you automate?)
 
 ## Expectations 
+* All test included the one in **backends** module must pass using ```mvn clean install```
 * The program must run and return results invoking the endpoint of the API described before.
 * The program must use the mocks servers we provide in **backends** module.
 * The program must work efficiently expecting to receive big amount fo traffic.
