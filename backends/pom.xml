@@ -12,7 +12,7 @@
     <artifactId>backends</artifactId>
 
     <properties>
-        <scala.version.compile>2.12</scala.version.compile>
+        <scala.version.compile>2.13</scala.version.compile>
         <scalatest.version>3.2.14</scalatest.version>
         <scalatest-maven-plugin.version>2.0.2</scalatest-maven-plugin.version>
         <maven.compiler.target>1.8</maven.compiler.target>
