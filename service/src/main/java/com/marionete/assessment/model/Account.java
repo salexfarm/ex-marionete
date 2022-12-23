@@ -1,4 +1,4 @@
-package com.marionete.service.model;
+package com.marionete.assessment.model;
 
 
 import lombok.Getter;

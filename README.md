@@ -1,6 +1,95 @@
 
 ![My image](img/marionete_logo-1.svg)
 
+## Run
+Use 'mvn clean install' to build, test and generate tests under target/site/index.html
+
+mvn clean spring-boot:run can be used from within the application's main pom.xml file. This pom.xml file can be found in the service folder.
+
+Maven Home Path Setting will possibly need to be changed under,
+Build, Execution, Deployment | Build Tools | Maven Home Path,
+in the event, Homebrew was used for maven configuration on the local system.
+
+## Containerization
+See the following link to dockerize maven project
+
+https://stackoverflow.com/questions/27767264/how-to-dockerize-maven-project-and-how-many-ways-to-accomplish-it
+
+## Code File Structure
+```bash
+├── README.md
+├── backends
+│   ├── backends.iml
+│   ├── pom.xml
+│   ├── src
+│   │   ├── main
+│   │   │   └── scala
+│   │   │       └── com
+│   │   │           └── marionete
+│   │   │               └── backends
+│   │   │                   ├── AccountInfoMock.scala
+│   │   │                   └── UserInfoMock.scala
+│   │   └── test
+│   │       └── scala
+│   │           └── com
+│   │               └── marionete
+│   │                   └── backends
+│   │                       ├── AccountInfoMockTest.scala
+│   │                       └── UserInfoMockTest.scala
+├── img
+│   └── marionete_logo-1.svg
+├── pom.xml
+└── service
+    ├── lombok.config
+    ├── pom.xml
+    ├── service.iml
+    ├── src
+    │   ├── main
+    │   │   ├── java
+    │   │   │   └── com
+    │   │   │       └── marionete
+    │   │   │           └── assessment
+    │   │   │               ├── MarioneteApplication.java
+    │   │   │               ├── config
+    │   │   │               │   ├── OpenAPIConfiguration.java
+    │   │   │               │   ├── SwaggerProperties.java
+    │   │   │               │   ├── SwaggerPropertyConfig.java
+    │   │   │               │   └── gRPCConfig.java
+    │   │   │               ├── controller
+    │   │   │               │   └── UserAccountController.java
+    │   │   │               ├── exceptions
+    │   │   │               │   ├── ControllerAdvice.java
+    │   │   │               │   ├── ExceptionResponse.java
+    │   │   │               │   └── TokenException.java
+    │   │   │               ├── model
+    │   │   │               │   ├── Account.java
+    │   │   │               │   ├── Credentials.java
+    │   │   │               │   ├── User.java
+    │   │   │               │   └── UserAccount.java
+    │   │   │               └── service
+    │   │   │                   ├── AccountService.java
+    │   │   │                   ├── AuthService.java
+    │   │   │                   ├── LoginService.java
+    │   │   │                   └── UserService.java
+    │   │   ├── proto
+    │   │   │   └── login_service.proto
+    │   │   └── resources
+    │   │       └── application.properties
+    │   └── test
+    │       └── java
+    │           └── com.marionete.assessment
+    │               ├── MarioneteApplicationTests.java
+    │               ├── config
+    │               │   └── SwaggerTest.java
+    │               ├── controller
+    │               │   └── UserAccountControllerTest.java
+    │               └── service
+    │                   ├── AccountServiceTest.java
+    │                   ├── AuthServiceTest.java
+    │                   ├── LoginServiceTest.java
+    │                   └── UserServiceTest.java
+```
+
 
 ## Description
 

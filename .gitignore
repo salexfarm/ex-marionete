@@ -3,30 +3,36 @@
 /build
 /*/bin
 target/
+# Scala-IDE specific
+.idea
+/*.iml
+*/target
+*.tar.gz
+/out/
 
-### Eclipse ###
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
+.DS_Store
+classes/*
 
-### Maven ###
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 
 ### NetBeans ###
 /nbproject/private/
@@ -38,27 +44,21 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-# Scala-IDE specific (Scala & Java development for Eclipse)
-.idea
-/*.iml
-*/target
-*.tar.gz
-/out/
-.cache-main
-.scala_dependencies
-.worksheet
-.DS_Store
-classes/*
+### VS Code ###
+.vscode/
 
-### Spring Boot ###
+### https://github.com/spring-projects/spring-boot/blob/main/.gitignore ###
 *#
 *.jar
 *.sw?
 *~
 .#*
 .*.md.html
+.DS_Store
 .attach_pid*
 .gradle
+.metadata
+.recommenders
 .vscode
 /code
 MANIFEST.MF
@@ -69,6 +69,7 @@ build
 !/**/src/**/bin
 !/**/src/**/build
 build.log
+dependency-reduced-pom.xml
 dump.rdb
 interpolated*.xml
 lib/
@@ -80,19 +81,14 @@ target
 secrets.yml
 .gradletasknamecache
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### VS Code ###
-.vscode/
-
-
-
-
+### https://github.com/github/gitignore/blob/main/Maven.gitignore ###
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+buildNumber.properties
+.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
 
