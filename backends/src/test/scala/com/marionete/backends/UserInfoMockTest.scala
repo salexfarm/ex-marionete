@@ -3,9 +3,10 @@ package com.marionete.backends
 import com.twitter.finagle.http.{Request, Response, Status}
 import com.twitter.finagle.{Http, ListeningServer, Service, http}
 import com.twitter.util.Await
-import org.scalatest.{BeforeAndAfterAll, FeatureSpec, GivenWhenThen}
+import org.scalatest.{BeforeAndAfterAll, GivenWhenThen}
+import org.scalatest.featurespec.AnyFeatureSpec;
 
-class UserInfoMockTest extends FeatureSpec with GivenWhenThen with BeforeAndAfterAll{
+class UserInfoMockTest extends AnyFeatureSpec with GivenWhenThen with BeforeAndAfterAll{
 
   var maybeServer: Option[ListeningServer] = None;
 

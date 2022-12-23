@@ -3,9 +3,10 @@ package com.marionete.backends
 import com.twitter.finagle.http.{Request, Response, Status}
 import com.twitter.finagle.{Http, Service, http}
 import com.twitter.util.Await
-import org.scalatest.{BeforeAndAfterAll, FeatureSpec, GivenWhenThen}
+import org.scalatest.{BeforeAndAfterAll, GivenWhenThen}
+import org.scalatest.featurespec.AnyFeatureSpec;
 
-class AccountInfoMockTest extends FeatureSpec with GivenWhenThen with BeforeAndAfterAll{
+class AccountInfoMockTest extends AnyFeatureSpec with GivenWhenThen with BeforeAndAfterAll{
 
   feature("[AccountInfoMock] To ensure that is working as we expect") {
 
